@@ -8,5 +8,6 @@ namespace ChinookSystem.BLL
 {
     public class ArtistController
     {
+
     }
 }
