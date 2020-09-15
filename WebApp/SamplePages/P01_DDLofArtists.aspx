@@ -2,6 +2,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
         <%--TODO: 02 Add a DDL--%>
+        <asp:DropDownList ID="DropDownList1" runat="server" 
+            DataSourceID="ObjectDataSource1" 
+            DataTextField="ArtistName" 
+            DataValueField="ArtistId">
+        </asp:DropDownList>
     </div>
     <br /><br />
 
@@ -12,6 +17,7 @@
             DataTextField="ArtistName"
             DataValueField="ArtistId"
             Width="350px">
+            <asp:ListItem Value="0">Hey Man</asp:ListItem>
         </asp:DropDownList>&nbsp;&nbsp;
         <asp:LinkButton
             ID="DisplaySelectedInfo1"
@@ -46,4 +52,8 @@
         TypeName="ChinookSystem.BLL.ArtistController">
     </asp:ObjectDataSource>
     <%--TODO: 01 Add a ODS--%>
+    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+        OldValuesParameterFormatString="original_{0}" 
+        SelectMethod="Artist_List" 
+        TypeName="ChinookSystem.BLL.ArtistController"></asp:ObjectDataSource>
 </asp:Content>
