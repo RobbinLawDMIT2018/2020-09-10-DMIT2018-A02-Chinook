@@ -65,7 +65,13 @@
                                 <a class="dropdown-item"
                                         href="~/SamplePages/TestPage1.aspx"
                                         style="color:black" runat="server">
-                                   TestPage1-Hello World</a>
+                                   TestPage1-Hello World
+                                </a>
+                                <a class="dropdown-item"
+                                        href="~/SamplePages/P01_DDLofArtists.aspx"
+                                        style="color:black" runat="server">
+                                   P01 DDL of Artists using ODS
+                                </a>
                             </div>
                          </li>
                          <li class="nav-item">

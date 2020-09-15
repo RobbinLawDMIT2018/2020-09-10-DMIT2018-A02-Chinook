@@ -8,5 +8,7 @@ namespace ChinookSystem.VIEWMODELS
 {
     public class ArtistViewModel
     {
+        public int ArtistId { get; set; }
+        public string ArtistName { get; set; }
     }
 }
