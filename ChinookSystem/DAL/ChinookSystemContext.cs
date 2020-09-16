@@ -18,5 +18,6 @@ namespace ChinookSystem.DAL
         }
 
         public DbSet<Artist> Artists { get; set; }
+        public DbSet<Album> Albums { get; set; }
     }
 }

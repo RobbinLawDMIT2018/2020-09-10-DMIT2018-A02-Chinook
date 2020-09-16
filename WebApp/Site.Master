@@ -72,6 +72,11 @@
                                         style="color:black" runat="server">
                                    P01 DDL of Artists using ODS
                                 </a>
+                                <a class="dropdown-item"
+                                        href="~/SamplePages/P02_DDLofAlbums.aspx"
+                                        style="color:black" runat="server">
+                                   P01 DDL of Albums using ODS
+                                </a>
                             </div>
                          </li>
                          <li class="nav-item">

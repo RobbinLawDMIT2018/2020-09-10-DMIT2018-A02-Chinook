@@ -186,6 +186,7 @@
     <Content Include="Global.asax" />
     <Content Include="Account\Web.config" />
     <Content Include="SamplePages\P01_DDLofArtists.aspx" />
+    <Content Include="SamplePages\P02_DDLofAlbums.aspx" />
     <Content Include="SamplePages\TestPage1.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -466,6 +467,13 @@
     </Compile>
     <Compile Include="SamplePages\P01_DDLofArtists.aspx.designer.cs">
       <DependentUpon>P01_DDLofArtists.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SamplePages\P02_DDLofAlbums.aspx.cs">
+      <DependentUpon>P02_DDLofAlbums.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SamplePages\P02_DDLofAlbums.aspx.designer.cs">
+      <DependentUpon>P02_DDLofAlbums.aspx</DependentUpon>
     </Compile>
     <Compile Include="SamplePages\TestPage1.aspx.cs">
       <DependentUpon>TestPage1.aspx</DependentUpon>
