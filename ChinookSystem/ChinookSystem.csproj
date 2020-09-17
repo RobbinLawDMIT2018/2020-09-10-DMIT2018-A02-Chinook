@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="BLL\AlbumController.cs" />
     <Compile Include="BLL\ArtistController.cs" />
+    <Compile Include="BLL\TrackController.cs" />
     <Compile Include="DAL\ChinookSystemContext.cs" />
     <Compile Include="ENTITIES\Album.cs" />
     <Compile Include="ENTITIES\Artist.cs" />
