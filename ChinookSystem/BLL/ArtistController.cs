@@ -15,6 +15,7 @@ namespace ChinookSystem.BLL
     [DataObject]
     public class ArtistController
     {
+        #region Queries
         //Due to the fact that the entities will be internal
         //you will NOT be able to use them directly as return datatypes.
         //Instead, we will create viewmodel classes that will contain the data definition
@@ -37,5 +38,8 @@ namespace ChinookSystem.BLL
                 return results.OrderBy(x => x.ArtistName).ToList();
             }
         }
+        #endregion
+        #region commands
+        #endregion
     }
 }
