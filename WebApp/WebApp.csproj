@@ -58,6 +58,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="FreeCode.WebApp, Version=0.1.7205.21979, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeCode.WebApp.0.1.7205.21979\lib\net472\FreeCode.WebApp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=3.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.3.6.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
@@ -185,6 +188,11 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Account\Web.config" />
+    <Content Include="SamplePages\P01_DDLofArtists.aspx" />
+    <Content Include="SamplePages\P02_DDLofAlbums.aspx" />
+    <Content Include="SamplePages\P03_CGVofAlbums.aspx" />
+    <Content Include="SamplePages\P04_CGVofTracks.aspx" />
+    <Content Include="SamplePages\P05_DDLofArtistsToCGVofAlbumsByArtistId.aspx" />
     <Content Include="SamplePages\TestPage1.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -308,6 +316,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="UserControls\MessageUserControl.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -459,6 +468,41 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SamplePages\P01_DDLofArtists.aspx.cs">
+      <DependentUpon>P01_DDLofArtists.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SamplePages\P01_DDLofArtists.aspx.designer.cs">
+      <DependentUpon>P01_DDLofArtists.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SamplePages\P02_DDLofAlbums.aspx.cs">
+      <DependentUpon>P02_DDLofAlbums.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SamplePages\P02_DDLofAlbums.aspx.designer.cs">
+      <DependentUpon>P02_DDLofAlbums.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SamplePages\P03_CGVofAlbums.aspx.cs">
+      <DependentUpon>P03_CGVofAlbums.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SamplePages\P03_CGVofAlbums.aspx.designer.cs">
+      <DependentUpon>P03_CGVofAlbums.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SamplePages\P04_CGVofTracks.aspx.cs">
+      <DependentUpon>P04_CGVofTracks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SamplePages\P04_CGVofTracks.aspx.designer.cs">
+      <DependentUpon>P04_CGVofTracks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SamplePages\P05_DDLofArtistsToCGVofAlbumsByArtistId.aspx.cs">
+      <DependentUpon>P05_DDLofArtistsToCGVofAlbumsByArtistId.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SamplePages\P05_DDLofArtistsToCGVofAlbumsByArtistId.aspx.designer.cs">
+      <DependentUpon>P05_DDLofArtistsToCGVofAlbumsByArtistId.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SamplePages\TestPage1.aspx.cs">
       <DependentUpon>TestPage1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -496,6 +540,13 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.5.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.5.1.min.map" />
+    <Content Include="WebConnectionStrings.config" />
+    <Content Include="WebConnectionStrings.Debug.config">
+      <DependentUpon>WebConnectionStrings.config</DependentUpon>
+    </Content>
+    <Content Include="WebConnectionStrings.Release.config">
+      <DependentUpon>WebConnectionStrings.config</DependentUpon>
+    </Content>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -508,6 +559,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChinookSystem\ChinookSystem.csproj">
+      <Project>{e438f31d-45da-4fd4-81bf-d7c851d52c89}</Project>
+      <Name>ChinookSystem</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
