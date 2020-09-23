@@ -92,6 +92,11 @@
                                         style="color:black" runat="server">
                                    P05 DDLofArtists to CGVofAlbumsByArtistId
                                 </a>
+                                <a class="dropdown-item"
+                                        href="~/SamplePages/P06_AlbumCRUD.aspx"
+                                        style="color:black" runat="server">
+                                   P06 AlbumCRUD
+                                </a>
                             </div>
                          </li>
                          <li class="nav-item">
