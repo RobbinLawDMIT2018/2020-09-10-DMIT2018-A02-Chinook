@@ -97,6 +97,11 @@
                                         style="color:black" runat="server">
                                    P06 AlbumCRUD
                                 </a>
+                                <a class="dropdown-item"
+                                        href="~/SamplePages/P07_TrackCRUD.aspx"
+                                        style="color:black" runat="server">
+                                   P07 Track CRUD
+                                </a>
                             </div>
                          </li>
                          <li class="nav-item">
