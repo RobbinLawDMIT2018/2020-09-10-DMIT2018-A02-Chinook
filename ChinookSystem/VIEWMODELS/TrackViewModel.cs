@@ -9,6 +9,7 @@ namespace ChinookSystem.VIEWMODELS
     public class TrackViewModel
     {
         public int TrackId { get; set; }
+        public int TrackMediaTypeId { get; set; }
         public string TrackName { get; set; }
         public string TrackComposer { get; set; }
         public int TrackMilliseconds { get; set; }

@@ -24,6 +24,8 @@ namespace ChinookSystem.BLL
                 var results = from x in context.Tracks
                               select new TrackViewModel
                               {
+                                  TrackId = x.TrackId,
+                                  TrackMediaTypeId = x.MediaTypeId,
                                   TrackName = x.Name,
                                   TrackComposer = x.Composer,
                                   TrackMilliseconds = x.Milliseconds,
@@ -47,6 +49,7 @@ namespace ChinookSystem.BLL
             {
                 Track info = new Track()
                 {
+                    MediaTypeId = item.TrackMediaTypeId,
                     Name = item.TrackName,
                     Composer = item.TrackComposer,
                     Milliseconds = item.TrackMilliseconds,
@@ -66,6 +69,7 @@ namespace ChinookSystem.BLL
                 Track info = new Track()
                 {
                     TrackId = item.TrackId,
+                    MediaTypeId = item.TrackMediaTypeId,
                     Name = item.TrackName,
                     Composer = item.TrackComposer,
                     Milliseconds = item.TrackMilliseconds,
