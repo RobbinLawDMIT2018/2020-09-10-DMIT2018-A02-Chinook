@@ -55,10 +55,10 @@
     <Compile Include="BLL\AlbumController.cs" />
     <Compile Include="BLL\ArtistController.cs" />
     <Compile Include="BLL\TrackController.cs" />
-    <Compile Include="DAL\ChinookSystemContext.cs" />
-    <Compile Include="ENTITIES\Album.cs" />
-    <Compile Include="ENTITIES\Artist.cs" />
-    <Compile Include="ENTITIES\Track.cs" />
+    <Compile Include="DAL\OLDChinookSystemContext.cs" />
+    <Compile Include="ENTITIES\OLDAlbum.cs" />
+    <Compile Include="ENTITIES\OLDArtist.cs" />
+    <Compile Include="ENTITIES\OLDTrack.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VIEWMODELS\AlbumViewModel.cs" />
     <Compile Include="VIEWMODELS\ArtistViewModel.cs" />

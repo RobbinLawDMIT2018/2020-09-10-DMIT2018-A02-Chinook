@@ -16,7 +16,7 @@ namespace ChinookSystem.ENTITIES
     //This internal will restrict access to this class to within
     //the SystemDB project.
     //Because of this we now need VIEWMODELS.
-    internal class Artist
+    internal class OLDArtist
     {
         // anotations:
         // [Key] is defualt primary identity field on database

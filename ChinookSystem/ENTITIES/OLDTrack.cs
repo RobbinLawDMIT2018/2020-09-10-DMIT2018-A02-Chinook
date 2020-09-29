@@ -11,7 +11,7 @@ using System.ComponentModel.DataAnnotations;
 namespace ChinookSystem.ENTITIES
 {
     [Table("Tracks")]
-    internal class Track
+    internal class OLDTrack
     {
         //private date members
         private string _Composer;
