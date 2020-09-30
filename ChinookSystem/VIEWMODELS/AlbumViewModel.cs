@@ -13,5 +13,6 @@ namespace ChinookSystem.VIEWMODELS
         public int ArtistId { get; set; }
         public int AlbumReleaseYear { get; set; }
         public string AlbumReleaseLabel { get; set; }
+        public string ReleaseLabelAndYear { get; set; }
     }
 }

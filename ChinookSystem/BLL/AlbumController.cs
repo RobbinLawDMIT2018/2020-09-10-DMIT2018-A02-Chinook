@@ -28,8 +28,9 @@ namespace ChinookSystem.BLL
                                   AlbumTitle = x.Title,
                                   ArtistId = x.ArtistId,
                                   AlbumReleaseYear = x.ReleaseYear,
-                                  AlbumReleaseLabel = x.ReleaseLabel
-                              };
+                                  AlbumReleaseLabel = x.ReleaseLabel,
+                                  ReleaseLabelAndYear = x.ReleaseLabel + ", " + x.ReleaseYear
+    };
                 return results.ToList();
             }
         }

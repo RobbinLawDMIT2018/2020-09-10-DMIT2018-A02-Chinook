@@ -10,5 +10,6 @@ namespace ChinookSystem.VIEWMODELS
     {
         public int ArtistId { get; set; }
         public string ArtistName { get; set; }
+        public string NameAndId { get; set; }
     }
 }
