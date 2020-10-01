@@ -12,7 +12,8 @@
                 </EditItemTemplate>
                 <ItemTemplate>
 
-                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ArtistODS" DataTextField="NameAndId" DataValueField="ArtistId" Enabled="false" Width="250"></asp:DropDownList>
+                    <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="ArtistODS" DataTextField="NameAndId" DataValueField="ArtistId" Enabled="false" Width="250" 
+                        selectedvalue='<%# Eval("ArtistId") %>'></asp:DropDownList>
                      
                     
                 </ItemTemplate>
