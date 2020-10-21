@@ -188,6 +188,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Account\Web.config" />
+    <Content Include="SamplePages\ODSRepeater.aspx" />
     <Content Include="SamplePages\P01_DDLofArtists.aspx" />
     <Content Include="SamplePages\P02_DDLofAlbums.aspx" />
     <Content Include="SamplePages\P03_CGVofAlbums.aspx" />
@@ -470,6 +471,13 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SamplePages\ODSRepeater.aspx.cs">
+      <DependentUpon>ODSRepeater.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SamplePages\ODSRepeater.aspx.designer.cs">
+      <DependentUpon>ODSRepeater.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SamplePages\P01_DDLofArtists.aspx.cs">
       <DependentUpon>P01_DDLofArtists.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

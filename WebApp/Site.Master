@@ -102,6 +102,11 @@
                                         style="color:black" runat="server">
                                    P07 Track CRUD
                                 </a>
+                                <a class="dropdown-item"
+                                        href="~/SamplePages/ODSRepeater.aspx"
+                                        style="color:black" runat="server">
+                                   Using the REpeater Control
+                                </a>
                             </div>
                          </li>
                          <li class="nav-item">

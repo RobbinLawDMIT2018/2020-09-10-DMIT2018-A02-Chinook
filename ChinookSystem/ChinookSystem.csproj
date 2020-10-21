@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="BLL\AlbumController.cs" />
     <Compile Include="BLL\ArtistController.cs" />
+    <Compile Include="BLL\PlayListController.cs" />
     <Compile Include="BLL\TrackController.cs" />
     <Compile Include="DAL\OLDChinookSystemContext.cs" />
     <Compile Include="ENTITIES\Album.cs" />
@@ -84,6 +85,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VIEWMODELS\AlbumViewModel.cs" />
     <Compile Include="VIEWMODELS\ArtistViewModel.cs" />
+    <Compile Include="VIEWMODELS\PlayListItem.cs" />
+    <Compile Include="VIEWMODELS\PlayListSong.cs" />
     <Compile Include="VIEWMODELS\TrackViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
