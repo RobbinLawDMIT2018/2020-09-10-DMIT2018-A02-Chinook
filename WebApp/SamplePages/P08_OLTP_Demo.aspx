@@ -59,4 +59,17 @@
         </div>
     </div>
 
+
+        <asp:ObjectDataSource ID="MediaTypeDDLODS" runat="server" 
+        OldValuesParameterFormatString="original_{0}" 
+        SelectMethod="List_MediaTypeNames" 
+        TypeName="ChinookSystem.BLL.MediaTypeController"
+         OnSelected="CheckForException">
+    </asp:ObjectDataSource>
+    <asp:ObjectDataSource ID="GenreDDLODS" runat="server" 
+        OldValuesParameterFormatString="original_{0}" 
+        SelectMethod="List_GenreNames" 
+        TypeName="ChinookSystem.BLL.GenreController"
+         OnSelected="CheckForException">
+    </asp:ObjectDataSource>
 </asp:Content>

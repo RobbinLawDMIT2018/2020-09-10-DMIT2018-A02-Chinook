@@ -107,6 +107,11 @@
                                         style="color:black" runat="server">
                                    Using the REpeater Control
                                 </a>
+                                <a class="dropdown-item"
+                                        href="~/SamplePages/P08_OLTP_Demo.aspx"
+                                        style="color:black" runat="server">
+                                   P08 OLTP Demo
+                                </a>
                             </div>
                          </li>
                          <li class="nav-item">
@@ -147,7 +152,7 @@
 
 
 
-        <div class="container body-content">
+        <div class="container-fluid">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />

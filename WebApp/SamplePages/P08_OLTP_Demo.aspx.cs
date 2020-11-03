@@ -40,5 +40,46 @@ namespace WebApp.SamplePages
             }
             //TracksSelectionList.DataBind();
         }
+
+        #region Error Handling
+        protected void CheckForException(object sender, ObjectDataSourceStatusEventArgs e)
+        {
+            MessageUserControl.HandleDataBoundException(e);
+        }
+
+        protected void InsertCheckForException(object sender, ObjectDataSourceStatusEventArgs e)
+        {
+            if (e.Exception == null)
+            {
+                MessageUserControl.ShowInfo("", "SUCCESS: Album has been added.");
+            }
+            else
+            {
+                MessageUserControl.HandleDataBoundException(e);
+            }
+        }
+        protected void UpdateCheckForException(object sender, ObjectDataSourceStatusEventArgs e)
+        {
+            if (e.Exception == null)
+            {
+                MessageUserControl.ShowInfo("", "SUCCESS: Album has been updated.");
+            }
+            else
+            {
+                MessageUserControl.HandleDataBoundException(e);
+            }
+        }
+        protected void DeleteCheckForException(object sender, ObjectDataSourceStatusEventArgs e)
+        {
+            if (e.Exception == null)
+            {
+                MessageUserControl.ShowInfo("", "SUCCESS: Album has been removed.");
+            }
+            else
+            {
+                MessageUserControl.HandleDataBoundException(e);
+            }
+        }
+        #endregion
     }
 }
