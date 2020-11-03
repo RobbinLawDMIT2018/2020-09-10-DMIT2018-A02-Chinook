@@ -18,7 +18,8 @@ namespace ChinookSystem.BLL
 	[DataObject]
     public class PlayListController
 	{
-		[DataObjectMethod(DataObjectMethodType.Select, false)]
+        #region Repeater Demo
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
 		public List<PlayListItem> PlayList_GetPlayListOfSize(int lowestplaylistsize)
 		{
 			using (var context = new ChinookSystemContext())
@@ -42,5 +43,6 @@ namespace ChinookSystem.BLL
 				return results.ToList();
 			}
 		}
-	}
+        #endregion
+    }
 }

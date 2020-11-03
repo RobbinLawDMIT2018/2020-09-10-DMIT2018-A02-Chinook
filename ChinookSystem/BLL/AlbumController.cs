@@ -15,7 +15,7 @@ namespace ChinookSystem.BLL
     [DataObject]
     public class AlbumController
     {
-        #region Queries
+        #region Albums_List Query
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public List<AlbumViewModel> Albums_List()
         {
@@ -30,10 +30,12 @@ namespace ChinookSystem.BLL
                                   AlbumReleaseYear = x.ReleaseYear,
                                   AlbumReleaseLabel = x.ReleaseLabel,
                                   ReleaseLabelAndYear = x.ReleaseLabel + ", " + x.ReleaseYear
-    };
+                                };
                 return results.ToList();
             }
         }
+        #endregion
+        #region AlbumsByArtist Query
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public List<AlbumViewModel> AlbumsByArtist(int artistid)
         {
@@ -53,7 +55,6 @@ namespace ChinookSystem.BLL
             }
         }
         #endregion
-
         #region Insert,Update,Delete
 
         //REMEMBER to add the DataKeyNames="AlbumId" 
@@ -115,7 +116,6 @@ namespace ChinookSystem.BLL
             }
         }
         #endregion
-
         #region BLL Data Validation
         private void DataValidation(AlbumViewModel item)
         {
