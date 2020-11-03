@@ -15,7 +15,7 @@ namespace ChinookSystem.BLL
     [DataObject]
     public class TrackController
     {
-        #region Queries
+        #region Track_List Query
         [DataObjectMethod(DataObjectMethodType.Select, false)]
         public List<TrackViewModel> Track_List()
         {
