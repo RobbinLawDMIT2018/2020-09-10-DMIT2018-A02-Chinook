@@ -38,8 +38,25 @@ namespace WebApp.SamplePages
                         SearchArg.Text = AlbumTitle.Text;
                     break;
             }
-            //TracksSelectionList.DataBind();
+            TracksSelectionList.DataBind();
         }
+        protected void PlayList_Button_Command(Object sender, System.Web.UI.WebControls.CommandEventArgs e)
+        {
+        }
+
+        protected void TracksSelectionList_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            //if (e.CommandName == "AddToMyPlayList")
+            //{
+            //    UserPlayListTrack item = GetTrackFromTracksListToAddToPlayList(e.Item);
+            //    var playListItems = GetPlayListItemsFromGridView();
+            //    playListItems.Insert(0, item);
+            //    MyPlayList.DataSource = playListItems;
+            //    MyPlayList.DataBind();
+            //    e.Handled = true;
+            //}
+        }
+
 
         #region Error Handling
         protected void CheckForException(object sender, ObjectDataSourceStatusEventArgs e)

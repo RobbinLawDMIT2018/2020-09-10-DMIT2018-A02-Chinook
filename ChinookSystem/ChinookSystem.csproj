@@ -90,6 +90,7 @@
     <Compile Include="VIEWMODELS\PlayListItem.cs" />
     <Compile Include="VIEWMODELS\PlayListSong.cs" />
     <Compile Include="VIEWMODELS\SelectionList.cs" />
+    <Compile Include="VIEWMODELS\TrackList.cs" />
     <Compile Include="VIEWMODELS\TrackViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

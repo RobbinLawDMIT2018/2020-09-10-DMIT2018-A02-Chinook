@@ -56,7 +56,105 @@
                 <asp:Label ID="TracksBy" runat="server" ></asp:Label>&nbsp;&nbsp;
                 <asp:Label ID="SearchArg" runat="server" ></asp:Label>
             </asp:Panel>
-        </div>
+        
+                <asp:ListView ID="TracksSelectionList" runat="server"
+                ItemType="ChinookSystem.VIEWMODELS.TrackList"
+                OnItemCommand="TracksSelectionList_ItemCommand"
+                DataSourceID="TracksSelectionListODS">
+                <AlternatingItemTemplate>
+                    <tr style="background-color: #FFFFFF; color: #284775;">
+                        <td>
+                            <asp:LinkButton ID="AddtoPlaylist" runat="server"
+                                CommandName="AddToMyPlayList" 
+                                CommandArgument='<%# Item.TrackID %>'
+                                CssClass="btn">
+                                <i class="fa fa-plus" style="color:red;"></i>
+                            </asp:LinkButton>
+                        </td>
+                        <td><asp:Label Text="<%# Item.TrackID %>"  runat="server"  ID="TrackIDLabel" /></td>
+                        <td><asp:Label Text='<%# Item.Name %>' runat="server" ID="NameLabel" /></td>
+                        <td><asp:Label Text='<%# Item.Title %>' runat="server" ID="TitleLabel" /></td>
+                        <td><asp:Label Text='<%# Item.ArtistName %>' runat="server" ID="ArtistNameLabel" /></td>
+                        <td><asp:Label Text='<%# Item.MediaName %>' runat="server" ID="MediaNameLabel" /></td>
+                        <td><asp:Label Text='<%# Item.GenreName %>' runat="server" ID="GenreNameLabel" /></td>
+                        <td><asp:Label Text='<%# Item.Composer %>' runat="server" ID="ComposerLabel" /></td>
+                        <td><asp:Label Text='<%# Item.Milliseconds %>' 
+                            runat="server" ID="MillisecondsLabel" /></td>
+                        <td><asp:Label Text='<%# string.Format("{0:0}",(int)Item.Bytes / 1000000m) %>' 
+                            runat="server" ID="BytesLabel" /></td>
+                        <td><asp:Label Text='<%# Item.UnitPrice %>' runat="server" ID="UnitPriceLabel" /></td>
+                    </tr>
+                </AlternatingItemTemplate>
+                <EmptyDataTemplate>
+                    <table runat="server" style="background-color: #FFFFFF; border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px;">
+                        <tr>
+                            <td>No data was returned.</td>
+                        </tr>
+                    </table>
+                </EmptyDataTemplate>
+                 <ItemTemplate>
+                    <tr style="background-color: #E0FFFF; color: #333333;">
+                        <td>
+                           <asp:LinkButton ID="AddtoPlaylist" runat="server"
+                               CommandName="AddToMyPlayList"
+                               CommandArgument='<%# Item.TrackID %>'
+                               CssClass="btn">
+                               <i class="fa fa-plus" style="color:red;"></i>
+                            </asp:LinkButton>
+                        </td>
+                        <td><asp:Label Text="<%# Item.TrackID %>"  runat="server"  ID="TrackIDLabel"/></td>
+                        <td><asp:Label Text='<%# Item.Name %>' runat="server" ID="NameLabel" /></td>
+                        <td><asp:Label Text='<%# Item.Title %>' runat="server" ID="TitleLabel" /></td>
+                        <td><asp:Label Text='<%# Item.ArtistName %>' runat="server" ID="ArtistNameLabel" /></td>
+                        <td><asp:Label Text='<%# Item.MediaName %>' runat="server" ID="MediaNameLabel" /></td>
+                        <td><asp:Label Text='<%# Item.GenreName %>' runat="server" ID="GenreNameLabel" /></td>
+                        <td><asp:Label Text='<%# Item.Composer %>' runat="server" ID="ComposerLabel" /></td>
+                        <td><asp:Label Text='<%# Item.Milliseconds %>' 
+                            runat="server" ID="MillisecondsLabel" /></td>
+                        <td><asp:Label Text='<%# string.Format("{0:0}",(int)Item.Bytes / 1000000m) %>' 
+                            runat="server" ID="BytesLabel" /></td>
+                        <td><asp:Label Text='<%# Item.UnitPrice %>' runat="server" ID="UnitPriceLabel" /></td>
+                    </tr>
+                </ItemTemplate>
+                <LayoutTemplate>
+                    <table runat="server">
+                        <tr runat="server">
+                            <td runat="server">
+                                <table runat="server" id="itemPlaceholderContainer" style="background-color: #FFFFFF; border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px; font-family: Verdana, Arial, Helvetica, sans-serif;" border="1">
+                                    <tr runat="server" style="background-color: #E0FFFF; color: #333333;">
+                                        <th runat="server"></th>
+                                        <th runat="server">ID</th>
+                                        <th runat="server">Track Name</th>
+                                        <th runat="server">Album</th>
+                                        <th runat="server">Artist</th>
+                                        <th runat="server">Media</th>
+                                        <th runat="server">Genre</th>
+                                        <th runat="server">Composer</th>
+                                        <th runat="server">Msec</th>
+                                        <th runat="server">(MB)</th>
+                                        <th runat="server">Price</th>
+                                    </tr>
+                                    <tr runat="server" id="itemPlaceholder"></tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr runat="server">
+                            <td runat="server" style="text-align: center; background-color: #C0C0C0; font-family: Verdana, Arial, Helvetica, sans-serif; color: #FFFFFF">
+                                <asp:DataPager runat="server" ID="DataPager1" PageSize="5" PagedControlID="TracksSelectionList">
+                                    <Fields>
+                                        <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False"></asp:NextPreviousPagerField>
+                                        <asp:NumericPagerField></asp:NumericPagerField>
+                                        <asp:NextPreviousPagerField ButtonType="Button" ShowLastPageButton="True" ShowNextPageButton="False" ShowPreviousPageButton="False"></asp:NextPreviousPagerField>
+                                    </Fields>
+                                </asp:DataPager>
+                            </td>
+                        </tr>
+                    </table>
+                </LayoutTemplate>
+            </asp:ListView>
+            <br /><br />
+
+
     </div>
 
 
@@ -71,5 +169,21 @@
         SelectMethod="List_GenreNames" 
         TypeName="ChinookSystem.BLL.GenreController"
          OnSelected="CheckForException">
+    </asp:ObjectDataSource>
+
+
+    <asp:ObjectDataSource ID="TracksSelectionListODS" runat="server" 
+        OldValuesParameterFormatString="original_{0}" 
+        SelectMethod="List_TracksForPlaylistSelection" 
+        TypeName="ChinookSystem.BLL.TrackController"
+         OnSelected="CheckForException">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="TracksBy"
+                PropertyName="Text" DefaultValue="none"
+                Name="tracksby" Type="String"></asp:ControlParameter>
+            <asp:ControlParameter ControlID="SearchArg" 
+                PropertyName="Text" DefaultValue="none" 
+                Name="arg" Type="String"></asp:ControlParameter>
+        </SelectParameters>
     </asp:ObjectDataSource>
 </asp:Content>

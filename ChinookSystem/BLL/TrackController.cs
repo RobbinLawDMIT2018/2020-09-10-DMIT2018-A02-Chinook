@@ -36,7 +36,103 @@ namespace ChinookSystem.BLL
             }
         }
         #endregion
+        #region TracksForPlaylistSelection
+        [DataObjectMethod(DataObjectMethodType.Select, false)]
+        public List<TrackList> List_TracksForPlaylistSelection(string tracksby, string arg)
+        {
+            using (var context = new ChinookSystemContext())
+            {
+                IEnumerable<TrackList> results = null;
+                if (tracksby.Equals("Artist"))
+                {
+                    results = from x in context.Tracks
+                              where x.Album.Artist.Name.Contains(arg)
+                              orderby x.Album.Artist.Name, x.Name
+                              select new TrackList
+                              {
+                                  TrackID = x.TrackId,
+                                  Name = x.Name,
+                                  Title = x.Album.Title,
+                                  ArtistName = x.Album.Artist.Name,
+                                  MediaName = x.MediaType.Name,
+                                  GenreName = x.Genre.Name,
+                                  Composer = x.Composer,
+                                  Milliseconds = x.Milliseconds,
+                                  Bytes = x.Bytes,
+                                  UnitPrice = x.UnitPrice
+                              };
+                }
+                else if (tracksby.Equals("Album"))
+                {
+                    results = from x in context.Tracks
+                              where x.Album.Title.Contains(arg)
+                              orderby x.Album.Title, x.Name
+                              select new TrackList
+                              {
+                                  TrackID = x.TrackId,
+                                  Name = x.Name,
+                                  Title = x.Album.Title,
+                                  ArtistName = x.Album.Artist.Name,
+                                  MediaName = x.MediaType.Name,
+                                  GenreName = x.Genre.Name,
+                                  Composer = x.Composer,
+                                  Milliseconds = x.Milliseconds,
+                                  Bytes = x.Bytes,
+                                  UnitPrice = x.UnitPrice
+                              };
+                }
+                else if (tracksby.Equals("MediaType"))
+                {
+                    int narg = int.Parse(arg);
+                    results = from x in context.Tracks
+                              where x.MediaTypeId == narg
+                              orderby x.MediaType.Name, x.Name
+                              select new TrackList
+                              {
+                                  TrackID = x.TrackId,
+                                  Name = x.Name,
+                                  Title = x.Album.Title,
+                                  ArtistName = x.Album.Artist.Name,
+                                  MediaName = x.MediaType.Name,
+                                  GenreName = x.Genre.Name,
+                                  Composer = x.Composer,
+                                  Milliseconds = x.Milliseconds,
+                                  Bytes = x.Bytes,
+                                  UnitPrice = x.UnitPrice
+                              };
+                }
+                else if (tracksby.Equals("Genre"))
+                {
+                    int narg = int.Parse(arg);
+                    results = from x in context.Tracks
+                              where x.GenreId == narg
+                              orderby x.Genre.Name, x.Name
+                              select new TrackList
+                              {
+                                  TrackID = x.TrackId,
+                                  Name = x.Name,
+                                  Title = x.Album.Title,
+                                  ArtistName = x.Album.Artist.Name,
+                                  MediaName = x.MediaType.Name,
+                                  GenreName = x.Genre.Name,
+                                  Composer = x.Composer,
+                                  Milliseconds = x.Milliseconds,
+                                  Bytes = x.Bytes,
+                                  UnitPrice = x.UnitPrice
+                              };
+                }
+                if (results == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return results.ToList();
+                }
 
+            }
+        }//eom
+        #endregion
         #region Insert,Update,Delete
 
         //REMEMBER to add the DataKeyNames="AlbumId" 
