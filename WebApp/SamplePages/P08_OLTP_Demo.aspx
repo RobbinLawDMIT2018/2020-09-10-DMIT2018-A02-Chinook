@@ -153,8 +153,76 @@
                 </LayoutTemplate>
             </asp:ListView>
             <br /><br />
+            <asp:GridView ID="MyPlayList" runat="server" AutoGenerateColumns="False"
+                GridLines="Horizontal" BorderStyle="None" 
+                ItemType="ChinookSystem.VIEWMODELS.UserPlayListTrack" 
+                DataKeyNames="TrackID"
+                OnRowCommand="MyPlayList_RowCommand" >
+                <Columns>
+                    <asp:TemplateField>
+                        <ItemTemplate >
+                            <asp:LinkButton ID="DeleteFromPlaylist" runat="server"
+                                CommandName="DeleteFromMyPlayList"
+                                CommandArgument="<%# Container.DataItemIndex %>"
+                                CssClass="btn" >
+                                <i class="fa fa-times" style="color:red;"></i>&nbsp;
+                            </asp:LinkButton>
+                            <%--OnClientClick="return confirm('Are you sure you wish to remove the selected song(s)?')"--%>
+                            <asp:LinkButton ID="MoveUp" runat="server"
+                                CommandName="MoveUpOnMyPlayList"
+                                CommandArgument="<%# Container.DataItemIndex %>"
+                                CssClass="btn">
+                                <i class="fa fa-chevron-up" style="color:blue;"></i>&nbsp;
+                            </asp:LinkButton>
+                            <asp:LinkButton ID="MoveDown" runat="server"
+                                CommandName="MoveDownOnMyPlayList"
+                                CommandArgument="<%# Container.DataItemIndex %>"
+                                CssClass="btn"  >
+                                <i class="fa fa-chevron-down" style="color:blue;"></i>&nbsp;
+                            </asp:LinkButton>
+                        </ItemTemplate>    
+                    </asp:TemplateField>
+                    <asp:TemplateField >
+                        <ItemTemplate >
+                            <asp:Label runat="server" ID="TrackId"
+                                Text='<%# Item.TrackID %>' Visible="false"></asp:Label>
+                            &nbsp;&nbsp;
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="TNum">
+                        <ItemTemplate>
+                            <asp:Label runat="server" ID="TrackNumber" Width="40px"
+                                Text='<%# Item.TrackNumber %>'></asp:Label>
+                              &nbsp;&nbsp;
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Name">
+                        <ItemTemplate>
+                            <asp:Label runat="server" ID="TrackName"
+                                Text='<%# Item.TrackName %>'></asp:Label>
+                              &nbsp;&nbsp;
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="Time (m:s)">
+                        <ItemTemplate>
+                            <asp:Label runat="server" ID="Milliseconds" Width="80px"
+                                Text='<%# string.Format("{0:0}", (int)Item.Milliseconds/60000m)  %>'>
+                            </asp:Label>
+                              &nbsp;&nbsp;
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField HeaderText="($)">
+                        <ItemTemplate> 
+                            <asp:Label runat="server" ID="UnitPrice"
+                                Text='<%# Item.UnitPrice %>'></asp:Label>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+                <EmptyDataTemplate>
+                No data to view for the playlist.
+                </EmptyDataTemplate>
+            </asp:GridView>
         </div>
-
     </div>
 
 
