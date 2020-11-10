@@ -98,6 +98,7 @@ namespace WebApp.SamplePages
             return list;
         }
         #endregion
+
         #region PlayList Row Commands (Delete, MoveUp, MoveDown)
         protected void MyPlayList_RowCommand(object sender, GridViewCommandEventArgs e)
         {
@@ -154,6 +155,7 @@ namespace WebApp.SamplePages
             }
         }
         #endregion
+
         #region Error Handling
         protected void CheckForException(object sender, ObjectDataSourceStatusEventArgs e)
         {
